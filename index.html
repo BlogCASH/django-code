@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bozor — Tashkentdan uyingizgacha yetkazamiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<header class="top">
+  <a href="#" class="logo">Bozor</a>
+  <input id="search" type="search" placeholder="Nima qidiryapsiz? Masalan: anor" aria-label="Qidiruv">
+  <button id="cartBtn" class="cart-btn" aria-label="Savatni ochish">Savat <span id="cartCount">0</span></button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Mazali va yangi mahsulotlar, bir kunda eshigingizda</h1>
+    <p>Fermerlardan to'g'ridan-to'g'ri. Narxlar bozordagidek, yetkazish esa bepul.</p>
+    <div class="chips" id="chips"></div>
+    <a href="#products" class="cta">Xarid qilishni boshlash</a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="float f1"><b>🍎</b><span>Olma</span><i>18 000</i></div>
+    <div class="float f2"><b>🍇</b><span>Uzum</span><i>35 000</i></div>
+    <div class="float f3"><b>🍞</b><span>Non</span><i>4 000</i></div>
+    <div class="float f4"><b>🍯</b><span>Asal</span><i>90 000</i></div>
+  </div>
+</section>
+
+<main id="products" class="shop">
+  <h2>Mahsulotlar</h2>
+  <div id="grid" class="grid"></div>
+  <p id="empty" class="empty" hidden>Hech narsa topilmadi. Boshqa so'z bilan qidirib ko'ring.</p>
+</main>
+
+<div id="overlay" class="overlay" hidden></div>
+<aside id="drawer" class="drawer" aria-label="Savat">
+  <div class="drawer-head"><h3>Savatingiz</h3><button id="closeCart" aria-label="Yopish">✕</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Jami</span><strong id="total">0 so'm</strong></div>
+    <button id="checkout" class="cta full">Buyurtma berish</button>
+  </div>
+</aside>
+<div id="toast" class="toast" role="status"></div>
+
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>
